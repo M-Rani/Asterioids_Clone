@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Asteroid.tscn" type="PackedScene" id=2]
+[ext_resource path="res://backgrounds/black.png" type="Texture" id=3]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Space_Black" type="TextureRect" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1880.0
+margin_bottom = 1040.0
+texture = ExtResource( 3 )
+stretch_mode = 2
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+rotation_speed = 2
+thrust_strength = 5.0
+
+[node name="Asteroid" parent="." instance=ExtResource( 2 )]
+position = Vector2( 751, 98 )
+scale = Vector2( 0.75, 0.75 )
